@@ -39,6 +39,34 @@ class WeatherRPC:
 
 if __name__ == '__main__':
     weather_client = WeatherRPC()
-    weather_data = weather_client.request()
+
+    while True:
+        user_input = input(
+    "Enter a zip code to get weather data for that area, or press Enter to get weather in your current area.\n"
+    "Type 'exit' to exit the program: "
+)
+
+
+        if user_input == 'exit':
+            print("Exiting program...")
+            sys.exit()
+
+        if user_input.strip() == '':
+            print("Getting weather for your current area...")
+            weather_data = weather_client.request()
+            for (key, value) in weather_data.items():
+                print(f"{key}: {value}")
+        else:
+            try:
+                weather_data = weather_client.request()
+                zip_code = int(user_input)
+                print(f"Getting weather for {zip_code} zip code...")
+                for (key, value) in weather_data.items():
+                    print(f"{key}: {value}")
+            except ValueError:
+                print("Invalid zip code. Please enter a valid zip code.")
+
+
+
 
 
