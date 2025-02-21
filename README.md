@@ -6,3 +6,4 @@ def on_response(self, ch, method, props, body):
         if self.corr_id == props.correlation_id:
             self.response = body
 
+![uml_microservice](https://github.com/user-attachments/assets/52dd4ba8-9eae-4804-9d48-db2a19371919)
