@@ -5,4 +5,4 @@ Receiving data is also a part of your WeatherRPC class. You can do what I did an
 def on_response(self, ch, method, props, body):
         if self.corr_id == props.correlation_id:
             self.response = body
-https://github.com/Joven-Kvortek/Microservice1CS361/blob/master/uml_microservice.JPG
+
